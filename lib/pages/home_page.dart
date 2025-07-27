@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,13 +9,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
-        title: Center(child: Text('Chpater 1')),
-      ),
+          title: Center(child: Text('Chapter 1'))),
       body: Center(
         child: Text(
-          'flutter 30 days course',
-          style: TextStyle(color: Colors.purple),
+          'flutter $day days course by  $name',
         ),
       ),
       drawer: Drawer(),
