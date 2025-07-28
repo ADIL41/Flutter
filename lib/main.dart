@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         brightness: Brightness.light
       ),
-      initialRoute: "/home", // by default start with home screen
+      //initialRoute: "/home", // by default start with home screen
       routes: {
         "/": (context)=> LoginPage(), // use to move to next screen
         "/home": (context)=> HomePage(),
