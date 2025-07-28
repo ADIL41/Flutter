@@ -6,10 +6,33 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Column(
+      child:  Column(
         children: [
-          Image.asset('assets/images/login_image.png', fit: BoxFit.scaleDown),
+          Image.asset('assets/images/login_image.png'),
+          SizedBox(height: 25),// make distance between image and text
+          Text('Well Come'),
+          SizedBox(height:25,),
+          Column(
+            children: [
+              TextFormField(
+                decoration: InputDecoration(
+                  hintText: "Enter Username",
+                  label:Icon(Icons.person),
+                ),
+              ),
+              TextFormField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: "Enter Password",
+                  labelText: "password",
+
+
+                ),
+              ),
+            ],
+          )
         ],
+
       ),
     );
   }
