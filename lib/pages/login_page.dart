@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
           Text('Well Come'),
           SizedBox(height: 25),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Column(
               children: [
                 TextFormField(
@@ -28,6 +28,13 @@ class LoginPage extends StatelessWidget {
                     hintText: "Enter Password",
                     labelText: "password",
                   ),
+                ),
+                SizedBox(height: 25),
+                ElevatedButton(
+                  onPressed: () {
+                    print('login is clicked');
+                  },
+                  child: Text('Login',style: TextStyle(fontSize: 24),),
                 ),
               ],
             ),
