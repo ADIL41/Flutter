@@ -8,9 +8,9 @@ class LoginPage extends StatelessWidget {
     return Material(
       child: Column(
         children: [
-          Image.asset('assets/images/login_image.png',fit:BoxFit.scaleDown),
+          Image.asset('assets/images/login_image.png', fit: BoxFit.scaleDown),
         ],
-      )
+      ),
     );
   }
 }

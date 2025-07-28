@@ -8,13 +8,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Center(child: Text('Chapter 1'))),
-      body: Center(
-        child: Text(
-          'flutter $day days course by  $name',
-        ),
-      ),
+      appBar: AppBar(title: Center(child: Text('Chapter 1'))),
+      body: Center(child: Text('flutter $day days course by  $name')),
       drawer: Drawer(),
     );
   }
