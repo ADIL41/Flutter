@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled/pages/home_page.dart';
 import 'package:untitled/pages/login_page.dart';
+import 'package:untitled/utils/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,11 +22,11 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData(brightness: Brightness.light),
 
-      //initialRoute: "/home", // by default start with home screen
+      initialRoute: "/login", // by default start with login screen
       routes: {
-        "/": (context) => LoginPage(), // use to move to next screen
-        "/home": (context) => HomePage(),
-        "/login": (context) => LoginPage(), // move to Login Screen/ page
+        MyRoutes.loginRoute: (context) =>
+            LoginPage(), // use to move to next screen
+        MyRoutes.homeRoute: (context) => HomePage(),
       },
     );
     //In Day 3 we have learned class,function,Routes
