@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:untitled/utils/routes.dart';
+
+import '../utils/routes.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -9,19 +10,20 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String name = "";
+  bool changedButton = false;
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(),
+      body: SingleChildScrollView(
         //to make scrollable the UI
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             (Image.asset('assets/images/login_image.png', fit: BoxFit.cover)),
             SizedBox(height: 25), // make distance between image and text
             Text(
-              'Well Come',
+              'Well Come $name',
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 25),
@@ -34,6 +36,13 @@ class _LoginPageState extends State<LoginPage> {
                       hintText: "Enter Username",
                       labelText: "Username",
                     ),
+                    // method use in text_form_filed
+                    onChanged: (value) {
+                      name = value;
+                      setState(
+                        () {},
+                      ); //its call the build method in stateful widget
+                    },
                   ),
                   TextFormField(
                     obscureText: true,
@@ -43,20 +52,54 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   SizedBox(height: 50),
-                  ElevatedButton(
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.purpleAccent,
-                      minimumSize: Size(135, 60),
-                    ),
-                    autofocus: true,
-                    onPressed: () {
+                  InkWell(
+                    onTap: () async {
+                      setState(() {
+                        changedButton = true;
+                      });
+                      await Future.delayed(
+                        Duration(seconds: 1),
+                      ); //it wait and then move to next screen
                       Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
-                    child: Text(
-                      'Login',
-                      style: TextStyle(fontSize: 24, color: Colors.white),
+                    child: AnimatedContainer(
+                      duration: Duration(seconds: 1),
+                      height: 40,
+                      width: changedButton ? 65 : 120, // width change to 80
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.deepPurple,
+                        borderRadius: BorderRadius.circular(
+                          changedButton ? 20 : 8,
+                        ),
+                      ),
+                      child: changedButton
+                          ? Icon(Icons.done, color: Colors.white)
+                          : Text(
+                              'Login',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                     ),
                   ),
+
+                  // ElevatedButton(
+                  //   style: TextButton.styleFrom(
+                  //     backgroundColor: Colors.purpleAccent,
+                  //     minimumSize: Size(135, 60),
+                  //   ),
+                  //   autofocus: true,
+                  //   onPressed: () {
+                  //     Navigator.pushNamed(context, MyRoutes.homeRoute);
+                  //   },
+                  //   child: Text(
+                  //     'Login',
+                  //     style: TextStyle(fontSize: 24, color: Colors.white),
+                  //   ),
+                  // ),
                 ],
               ),
             ),

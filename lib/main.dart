@@ -14,11 +14,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
       theme: ThemeData(
-        primarySwatch: Colors.teal,
         fontFamily: GoogleFonts.lato()
             .fontFamily, //text style remain same in overall app
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.purple,
+          foregroundColor: Colors.white,
+        ),
       ),
       darkTheme: ThemeData(brightness: Brightness.light),
 
