@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.purple,
           foregroundColor: Colors.white,
+          elevation: 4,
         ),
       ),
       darkTheme: ThemeData(brightness: Brightness.light),
