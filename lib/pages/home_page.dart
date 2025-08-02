@@ -9,16 +9,22 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Center(child: Text('Chapter 1'))),
-      body: Center(
-        child: Text(
-          'flutter $day days course by  $name',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
+      appBar: AppBar(title: Center(child: Text('Home Page'))),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Center(
+            child: Text(
+              'Well come to Home page',
+              style: TextStyle(
+                fontSize: 20,
+                fontFamily: 'Google font',
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
-        ),
+        ],
       ),
       drawer: MyDrawer(),
     );
