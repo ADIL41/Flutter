@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Center(child: Text('Home Page'))),
+      appBar: AppBar(title: Center(child: Text('Catalog App'))),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -17,11 +17,7 @@ class HomePage extends StatelessWidget {
           Center(
             child: Text(
               'Well come to Home page',
-              style: TextStyle(
-                fontSize: 20,
-                fontFamily: 'Google font',
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 20),
             ),
           ),
         ],
