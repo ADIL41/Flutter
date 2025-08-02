@@ -15,10 +15,7 @@ class HomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Center(
-            child: Text(
-              'Well come to Home page',
-              style: TextStyle(fontSize: 20),
-            ),
+            child: Text('Well come to My App ', style: TextStyle(fontSize: 20)),
           ),
         ],
       ),
